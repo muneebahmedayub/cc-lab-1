@@ -1,0 +1,28 @@
+﻿<Window x:Class="Task02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task02"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="NameTextBox" Width="150" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <TextBox x:Name="AgeTextBox" Width="50" Margin="0,0,10,0" VerticalAlignment="Center"/>
+            <Button Content="Add Person" Click="AddPerson_Click" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <DataGrid x:Name="PeopleDataGrid" Grid.Row="1" Margin="10" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
